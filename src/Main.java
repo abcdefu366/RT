@@ -38,8 +38,8 @@ class Mary {
     }
     public void method() {
         double parameter = Math.random();
-        double a = 0.33;
-        double b = 0.66;
+        double a = 1 / 3f;
+        double b = 2 / 3f;
         while (happiness > 0 && happiness < 1) {
             System.out.println(parameter);
             if (parameter < a) {
