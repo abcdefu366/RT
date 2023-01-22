@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Mary mary = new Mary("Мэри");
         mary.method();
+        mary.secondMethod();
     }
 }
 class Mary {
@@ -41,7 +42,6 @@ class Mary {
         double a = 1 / 3f;
         double b = 2 / 3f;
         while (happiness > 0 && happiness < 1) {
-            System.out.println(parameter);
             if (parameter < a) {
                 happiness += 0.08;
                 setLocation("Старые клумбы");
@@ -67,11 +67,38 @@ class Mary {
         }
         if (happiness <= 0) {
             setStatus("Грустная");
-            System.out.println("Теперь " + getName() + " " + getStatus() + ", и  она не может увидеть много зелёных ростков.");
+            System.out.println("Теперь " + getName() + " " + getStatus() + ", и она не может увидеть много зелёных ростков.");
         }
         if (happiness >= 1) {
             setStatus("Весёлая");
-            System.out.println("Теперь " + getName() + " " + getStatus() + ", и  она может увидеть много зелёных ростков!");
+            System.out.println("Теперь " + getName() + " " + getStatus() + ", и она может увидеть много зелёных ростков!");
         }
+    }
+    public void secondMethod() {
+        class Weed {
+            private String name;
+
+            public String getName() {
+                return name;
+            }
+            public Weed(String name) {
+                this.name = name;
+            }
+        }
+        Weed weed = new Weed("Сорняк");
+        int numberOfFlowers = 1;
+        double a = 1;
+        double b = Math.random();
+        System.out.println(getName() + " подошла к " + weed.getName());
+        System.out.println(getName() + " вырвала " + numberOfFlowers + " " + weed.getName());
+        while (a > b) {
+            System.out.println(getName() + " подошла к следующему " + weed.getName());
+            numberOfFlowers++;
+            System.out.println(getName() + " вырвала " + numberOfFlowers + " " + weed.getName());
+            a = Math.random();
+            b = Math.random();
+        }
+        System.out.println("Мэри закончила прополку!");
+        setStatus("finished");
     }
 }
