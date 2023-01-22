@@ -24,8 +24,10 @@ public class Main {
 }
 class Narrator {
     private ArrayList<String> phrases = new ArrayList<>();
+    private int numberOfPhrase;
     public void addPhrase(String phrase) {
-        phrases.add(phrase);
+        phrases.add(numberOfPhrase, phrase);
+        numberOfPhrase++;
     }
     public void sayPhrase() {
         int a = (int) Math.ceil(Math.random()*8);
