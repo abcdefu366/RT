@@ -6,11 +6,12 @@ public class Main {
         Mary mary = new Mary("Мэри");
         mary.method();
         mary.secondMethod();
+        mary.thirdMethod();
     }
 }
 class Mary {
     private String name;
-    private double happiness = 0.5;
+    private double happiness;
     private String location;
     private String status;
 
@@ -37,7 +38,13 @@ class Mary {
     public Mary(String name) {
         this.name = name;
     }
+
+    public void setHappiness(double happiness) {
+        this.happiness = happiness;
+    }
+
     public void method() {
+        setHappiness(0.5);
         double parameter = Math.random();
         double a = 1 / 3f;
         double b = 2 / 3f;
@@ -100,5 +107,23 @@ class Mary {
         }
         System.out.println("Мэри закончила прополку!");
         setStatus("finished");
+    }
+    public void thirdMethod() {
+        System.out.println(getName() + " подошла к первой клумбе и начала полоть");
+        setHappiness(0);
+        double a = Math.random();
+        double b = Math.random();
+        while (happiness < 1) {
+            System.out.println(getName() + " подошла к следующей клумбе и прополола её");
+            double c = Math.abs((a - b) / 2);
+            happiness += c;
+            String strOne = String.format("%.0f", happiness * 100);
+            String strTwo = String.format("%.0f", c*100);
+            System.out.println("Счастье " + getName() + " увеличилось на " + strTwo + "% и теперь равно: " + strOne + "%");
+            a = Math.random();
+            b = Math.random();
+        }
+        String str = String.format("%.0f", happiness * 100);
+        System.out.println(getName() + " счастлива на все " + str + "%, ведь она прополола все клумбы!");
     }
 }
